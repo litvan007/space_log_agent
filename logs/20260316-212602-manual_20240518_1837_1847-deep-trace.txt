@@ -1,0 +1,1434 @@
+window_id: manual_20240518_1837_1847
+agent_id: space_incident_sgr_975bc61b-440a-4717-bb85-82bff37f4c66
+
+classification:
+{
+  "observation": "Множественные аномалии в термальном контуре и энергосистеме с критической корреляцией. ADCS_mode стабильный, но есть признаки потери стабилизации. Затмение в орбитальном контексте не объясняет одновременное падение напряжения и рост температуры.",
+  "evidences": [
+    "THERMAL_OVERHEAT: NanoMind_Temp и ACU2_Temp растут в пределах окна",
+    "POWER_DEGRADATION: Battery_Voltage снижается, Battery_Temp растет",
+    "CRITICAL_POWER_THERMAL_COUPLING: Одновременное повышение температуры и падение напряжения"
+  ],
+  "confidence_alarm": 0.85,
+  "is_anomaly": true,
+  "anomaly_class": "MIXED"
+}
+
+envelope:
+{
+  "window_id": "manual_20240518_1837_1847",
+  "timestamp_start": "2024-05-18T18:37:00Z",
+  "timestamp_end": "2024-05-18T18:47:00Z",
+  "telemetry_summary": {
+    "Battery_Temp": {
+      "mean": 237.14285714285714,
+      "std": 2.8163758252611895,
+      "min": 236.0,
+      "max": 245.0,
+      "last": 245.0
+    },
+    "Battery_Voltage": {
+      "mean": 8187.761904761905,
+      "std": 64.87269934403382,
+      "min": 7990.0,
+      "max": 8213.0,
+      "last": 8109.0
+    },
+    "NanoMind_Temp": {
+      "mean": 258.7142857142857,
+      "std": 11.547594501692126,
+      "min": 254.0,
+      "max": 287.0,
+      "last": 287.0
+    },
+    "ACU2_Temp": {
+      "mean": 272.14285714285717,
+      "std": 27.29954772743404,
+      "min": 261.0,
+      "max": 340.0,
+      "last": 340.0
+    },
+    "Background_RSSI": {
+      "mean": -102.52380952380952,
+      "std": 7.034737261950243,
+      "min": -114.0,
+      "max": -97.0,
+      "last": -101.0
+    },
+    "X_Coarse_Spin": {
+      "mean": -0.001038087443226857,
+      "std": 0.009585276048776513,
+      "min": -0.0316005274653434,
+      "max": 0.0261775385588407,
+      "last": 0.0261775385588407
+    },
+    "Y_Coarse_Spin": {
+      "mean": 0.0035078975238970337,
+      "std": 0.013958417918734095,
+      "min": -0.0164008159190416,
+      "max": 0.0485695414245128,
+      "last": 0.0485695414245128
+    },
+    "Z_Coarse_Spin": {
+      "mean": 0.00832102376790273,
+      "std": 0.020617820633146957,
+      "min": 0.0,
+      "max": 0.0683962851762771,
+      "last": 0.0482578761875629
+    },
+    "PD1_CSS_theta": {
+      "mean": 0.03993210622242519,
+      "std": 0.17858180799617013,
+      "min": 0.0,
+      "max": 0.838574230670929,
+      "last": 0.838574230670929
+    },
+    "ADCS_mode": {
+      "mean": 2.0,
+      "std": 0.0,
+      "min": 2.0,
+      "max": 2.0,
+      "last": 2.0
+    }
+  },
+  "alerts": [
+    "THERMAL_OVERHEAT",
+    "POWER_DEGRADATION",
+    "ADCS_STABILIZATION_LOSS",
+    "SENSOR_DEGRADATION"
+  ],
+  "errors": [
+    "CRITICAL_POWER_THERMAL_COUPLING"
+  ],
+  "orbit_context": {
+    "orbit_lat": 56.68621622706616,
+    "orbit_lon": 18.147102502222847,
+    "orbit_altitude_km": 267.3838072411586,
+    "sun_exposure": false,
+    "is_eclipse": true,
+    "ground_station_visible": true,
+    "distance_to_ground_station_km": 1204.052692686554,
+    "orbital_phase": 0.34249178836913813,
+    "time_since_tle_epoch_sec": 23356.964661
+  },
+  "precomputed_features": {
+    "rough_anomaly_score": 0.8417228453610791,
+    "trends": {
+      "Battery_Temp": 0.2831168831168799,
+      "Battery_Voltage": -6.0402597402594935,
+      "NanoMind_Temp": 1.157142857142852,
+      "ACU2_Temp": 2.7389610389610417,
+      "Background_RSSI": -0.8285714285714294,
+      "X_Coarse_Spin": -0.00017976683213726213,
+      "Y_Coarse_Spin": 0.0009454064796884336,
+      "Z_Coarse_Spin": 0.0020162793287596126,
+      "PD1_CSS_theta": 0.010890574424297783,
+      "ADCS_mode": -8.618612728080111e-18
+    },
+    "change_points": {
+      "Battery_Temp": [
+        50618
+      ],
+      "Battery_Voltage": [
+        50618
+      ],
+      "NanoMind_Temp": [
+        50618
+      ],
+      "ACU2_Temp": [
+        50618
+      ],
+      "Background_RSSI": [],
+      "X_Coarse_Spin": [
+        50620
+      ],
+      "Y_Coarse_Spin": [
+        50619
+      ],
+      "Z_Coarse_Spin": [
+        50618
+      ],
+      "PD1_CSS_theta": [
+        50620
+      ],
+      "ADCS_mode": []
+    },
+    "rolling": {
+      "Battery_Temp": {
+        "rolling_mean": [
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          237.4,
+          239.0,
+          240.8
+        ],
+        "rolling_std": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          3.1304951684997038,
+          4.123105625617659,
+          4.438468204234426
+        ]
+      },
+      "Battery_Voltage": {
+        "rolling_mean": [
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8168.4,
+          8127.8,
+          8107.0
+        ],
+        "rolling_std": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          99.72863179649052,
+          116.87899725784774,
+          106.74033914130115
+        ]
+      },
+      "NanoMind_Temp": {
+        "rolling_mean": [
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          260.6,
+          267.2,
+          273.8
+        ],
+        "rolling_std": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          14.758048651498605,
+          18.07484439767048,
+          18.07484439767048
+        ]
+      },
+      "ACU2_Temp": {
+        "rolling_mean": [
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          276.2,
+          292.0,
+          307.8
+        ],
+        "rolling_std": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          33.98823325799681,
+          42.46174749112429,
+          42.73991109022105
+        ]
+      },
+      "Background_RSSI": {
+        "rolling_mean": [
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -100.0,
+          -103.0,
+          -106.0,
+          -109.0,
+          -112.0,
+          -112.0,
+          -110.0,
+          -110.4,
+          -108.2
+        ],
+        "rolling_std": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          6.708203932499369,
+          8.215838362577491,
+          8.215838362577491,
+          6.708203932499369,
+          0.0,
+          0.0,
+          4.47213595499958,
+          4.774934554525328,
+          6.180614856144977
+        ]
+      }
+    },
+    "evidence_map": {
+      "THERMAL_OVERHEAT": [
+        "NanoMind_Temp растет в пределах окна",
+        "ACU2_Temp растет в пределах окна"
+      ],
+      "POWER_DEGRADATION": [
+        "Battery_Voltage заметно снижается",
+        "Battery_Temp одновременно растет"
+      ],
+      "ADCS_STABILIZATION_LOSS": [
+        "Наблюдается рост суммарного spin"
+      ],
+      "SENSOR_DEGRADATION": [
+        "Зафиксированы spikes в CSS"
+      ]
+    },
+    "alerts_summary": {
+      "alerts_count": 4,
+      "alerts": [
+        "THERMAL_OVERHEAT",
+        "POWER_DEGRADATION",
+        "ADCS_STABILIZATION_LOSS",
+        "SENSOR_DEGRADATION"
+      ]
+    },
+    "errors_summary": {
+      "errors_count": 1,
+      "errors": [
+        "CRITICAL_POWER_THERMAL_COUPLING"
+      ]
+    },
+    "events": {
+      "alerts_count": 4,
+      "errors_count": 1,
+      "alerts": [
+        "THERMAL_OVERHEAT",
+        "POWER_DEGRADATION",
+        "ADCS_STABILIZATION_LOSS",
+        "SENSOR_DEGRADATION"
+      ],
+      "errors": [
+        "CRITICAL_POWER_THERMAL_COUPLING"
+      ]
+    }
+  },
+  "raw_telemetry_ref": "/data/uhf_telemetry.csv",
+  "tle_ref": "/data/tle_opssat.txt"
+}
+
+task_messages:
+[
+  {
+    "role": "user",
+    "content": "# Входные данные окна инцидента\n\n<INSTRUCTION>\nВыполни технический анализ инцидента КА по данным ниже.\nСчитай этот JSON единственным источником фактов.\nИспользуй вывод ноды классификации как приоритетный стартовый контекст расследования.\n</INSTRUCTION>\n\n## Вывод классификации (SO)\n```json\n{\n  \"observation\": \"Множественные аномалии в термальном контуре и энергосистеме с критической корреляцией. ADCS_mode стабильный, но есть признаки потери стабилизации. Затмение в орбитальном контексте не объясняет одновременное падение напряжения и рост температуры.\",\n  \"evidences\": [\n    \"THERMAL_OVERHEAT: NanoMind_Temp и ACU2_Temp растут в пределах окна\",\n    \"POWER_DEGRADATION: Battery_Voltage снижается, Battery_Temp растет\",\n    \"CRITICAL_POWER_THERMAL_COUPLING: Одновременное повышение температуры и падение напряжения\"\n  ],\n  \"confidence_alarm\": 0.85,\n  \"is_anomaly\": true,\n  \"anomaly_class\": \"MIXED\"\n}\n```\n\n## IncidentEnvelope\n```json\n{\n  \"window_id\": \"manual_20240518_1837_1847\",\n  \"timestamp_start\": \"2024-05-18T18:37:00Z\",\n  \"timestamp_end\": \"2024-05-18T18:47:00Z\",\n  \"telemetry_summary\": {\n    \"Battery_Temp\": {\n      \"mean\": 237.14285714285714,\n      \"std\": 2.8163758252611895,\n      \"min\": 236.0,\n      \"max\": 245.0,\n      \"last\": 245.0\n    },\n    \"Battery_Voltage\": {\n      \"mean\": 8187.761904761905,\n      \"std\": 64.87269934403382,\n      \"min\": 7990.0,\n      \"max\": 8213.0,\n      \"last\": 8109.0\n    },\n    \"NanoMind_Temp\": {\n      \"mean\": 258.7142857142857,\n      \"std\": 11.547594501692126,\n      \"min\": 254.0,\n      \"max\": 287.0,\n      \"last\": 287.0\n    },\n    \"ACU2_Temp\": {\n      \"mean\": 272.14285714285717,\n      \"std\": 27.29954772743404,\n      \"min\": 261.0,\n      \"max\": 340.0,\n      \"last\": 340.0\n    },\n    \"Background_RSSI\": {\n      \"mean\": -102.52380952380952,\n      \"std\": 7.034737261950243,\n      \"min\": -114.0,\n      \"max\": -97.0,\n      \"last\": -101.0\n    },\n    \"X_Coarse_Spin\": {\n      \"mean\": -0.001038087443226857,\n      \"std\": 0.009585276048776513,\n      \"min\": -0.0316005274653434,\n      \"max\": 0.0261775385588407,\n      \"last\": 0.0261775385588407\n    },\n    \"Y_Coarse_Spin\": {\n      \"mean\": 0.0035078975238970337,\n      \"std\": 0.013958417918734095,\n      \"min\": -0.0164008159190416,\n      \"max\": 0.0485695414245128,\n      \"last\": 0.0485695414245128\n    },\n    \"Z_Coarse_Spin\": {\n      \"mean\": 0.00832102376790273,\n      \"std\": 0.020617820633146957,\n      \"min\": 0.0,\n      \"max\": 0.0683962851762771,\n      \"last\": 0.0482578761875629\n    },\n    \"PD1_CSS_theta\": {\n      \"mean\": 0.03993210622242519,\n      \"std\": 0.17858180799617013,\n      \"min\": 0.0,\n      \"max\": 0.838574230670929,\n      \"last\": 0.838574230670929\n    },\n    \"ADCS_mode\": {\n      \"mean\": 2.0,\n      \"std\": 0.0,\n      \"min\": 2.0,\n      \"max\": 2.0,\n      \"last\": 2.0\n    }\n  },\n  \"alerts\": [\n    \"THERMAL_OVERHEAT\",\n    \"POWER_DEGRADATION\",\n    \"ADCS_STABILIZATION_LOSS\",\n    \"SENSOR_DEGRADATION\"\n  ],\n  \"errors\": [\n    \"CRITICAL_POWER_THERMAL_COUPLING\"\n  ],\n  \"orbit_context\": {\n    \"orbit_lat\": 56.68621622706616,\n    \"orbit_lon\": 18.147102502222847,\n    \"orbit_altitude_km\": 267.3838072411586,\n    \"sun_exposure\": false,\n    \"is_eclipse\": true,\n    \"ground_station_visible\": true,\n    \"distance_to_ground_station_km\": 1204.052692686554,\n    \"orbital_phase\": 0.34249178836913813,\n    \"time_since_tle_epoch_sec\": 23356.964661\n  },\n  \"precomputed_features\": {\n    \"rough_anomaly_score\": 0.8417228453610791,\n    \"trends\": {\n      \"Battery_Temp\": 0.2831168831168799,\n      \"Battery_Voltage\": -6.0402597402594935,\n      \"NanoMind_Temp\": 1.157142857142852,\n      \"ACU2_Temp\": 2.7389610389610417,\n      \"Background_RSSI\": -0.8285714285714294,\n      \"X_Coarse_Spin\": -0.00017976683213726213,\n      \"Y_Coarse_Spin\": 0.0009454064796884336,\n      \"Z_Coarse_Spin\": 0.0020162793287596126,\n      \"PD1_CSS_theta\": 0.010890574424297783,\n      \"ADCS_mode\": -8.618612728080111e-18\n    },\n    \"change_points\": {\n      \"Battery_Temp\": [\n        50618\n      ],\n      \"Battery_Voltage\": [\n        50618\n      ],\n      \"NanoMind_Temp\": [\n        50618\n      ],\n      \"ACU2_Temp\": [\n        50618\n      ],\n      \"Background_RSSI\": [],\n      \"X_Coarse_Spin\": [\n        50620\n      ],\n      \"Y_Coarse_Spin\": [\n        50619\n      ],\n      \"Z_Coarse_Spin\": [\n        50618\n      ],\n      \"PD1_CSS_theta\": [\n        50620\n      ],\n      \"ADCS_mode\": []\n    },\n    \"rolling\": {\n      \"Battery_Temp\": {\n        \"rolling_mean\": [\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          236.0,\n          237.4,\n          239.0,\n          240.8\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          3.1304951684997038,\n          4.123105625617659,\n          4.438468204234426\n        ]\n      },\n      \"Battery_Voltage\": {\n        \"rolling_mean\": [\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8213.0,\n          8168.4,\n          8127.8,\n          8107.0\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          99.72863179649052,\n          116.87899725784774,\n          106.74033914130115\n        ]\n      },\n      \"NanoMind_Temp\": {\n        \"rolling_mean\": [\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          254.0,\n          260.6,\n          267.2,\n          273.8\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          14.758048651498605,\n          18.07484439767048,\n          18.07484439767048\n        ]\n      },\n      \"ACU2_Temp\": {\n        \"rolling_mean\": [\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          261.0,\n          276.2,\n          292.0,\n          307.8\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          33.98823325799681,\n          42.46174749112429,\n          42.73991109022105\n        ]\n      },\n      \"Background_RSSI\": {\n        \"rolling_mean\": [\n          -97.0,\n          -97.0,\n          -97.0,\n          -97.0,\n          -97.0,\n          -97.0,\n          -97.0,\n          -97.0,\n          -97.0,\n          -97.0,\n          -97.0,\n          -97.0,\n          -100.0,\n          -103.0,\n          -106.0,\n          -109.0,\n          -112.0,\n          -112.0,\n          -110.0,\n          -110.4,\n          -108.2\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          6.708203932499369,\n          8.215838362577491,\n          8.215838362577491,\n          6.708203932499369,\n          0.0,\n          0.0,\n          4.47213595499958,\n          4.774934554525328,\n          6.180614856144977\n        ]\n      }\n    },\n    \"evidence_map\": {\n      \"THERMAL_OVERHEAT\": [\n        \"NanoMind_Temp растет в пределах окна\",\n        \"ACU2_Temp растет в пределах окна\"\n      ],\n      \"POWER_DEGRADATION\": [\n        \"Battery_Voltage заметно снижается\",\n        \"Battery_Temp одновременно растет\"\n      ],\n      \"ADCS_STABILIZATION_LOSS\": [\n        \"Наблюдается рост суммарного spin\"\n      ],\n      \"SENSOR_DEGRADATION\": [\n        \"Зафиксированы spikes в CSS\"\n      ]\n    },\n    \"alerts_summary\": {\n      \"alerts_count\": 4,\n      \"alerts\": [\n        \"THERMAL_OVERHEAT\",\n        \"POWER_DEGRADATION\",\n        \"ADCS_STABILIZATION_LOSS\",\n        \"SENSOR_DEGRADATION\"\n      ]\n    },\n    \"errors_summary\": {\n      \"errors_count\": 1,\n      \"errors\": [\n        \"CRITICAL_POWER_THERMAL_COUPLING\"\n      ]\n    },\n    \"events\": {\n      \"alerts_count\": 4,\n      \"errors_count\": 1,\n      \"alerts\": [\n        \"THERMAL_OVERHEAT\",\n        \"POWER_DEGRADATION\",\n        \"ADCS_STABILIZATION_LOSS\",\n        \"SENSOR_DEGRADATION\"\n      ],\n      \"errors\": [\n        \"CRITICAL_POWER_THERMAL_COUPLING\"\n      ]\n    }\n  },\n  \"raw_telemetry_ref\": \"/data/uhf_telemetry.csv\",\n  \"tle_ref\": \"/data/tle_opssat.txt\"\n}\n```\n\n## Краткая история предыдущих окон\n```json\n[]\n```\n\n<EXPECTED_BEHAVIOR>\n- Начни deep analysis с проверки/уточнения гипотез из блока классификации.\n- Используй историю предыдущих окон как дополнительный контекст, но не подменяй ею факты текущего окна.\n- Учитывай телеметрию и орбитальный контекст совместно.\n- Отделяй причины аномалии от сопутствующих факторов.\n- Предлагай УВ с учетом безопасности выполнения.\n- Если `orbit_context.ground_station_visible != true`, не предлагай действия, требующие активного окна связи.\n- Если есть `POWER_DEGRADATION`, не предлагай `INCREASE_TELEMETRY_RATE`.\n- Если окно связи отсутствует, не предлагай `REPEAT_CONTACT_SESSION` как немедленное УВ.\n</EXPECTED_BEHAVIOR>"
+  }
+]
+
+execution_log:
+[step 1] reasoning @ 2026-03-16T21:25:27.372522
+{
+  "reasoning_steps": [
+    "Начало расследования инцидента с анализом классификации и телеметрии",
+    "Идентификация критических аномалий в термальном контуре и энергосистеме",
+    "Проверка корреляции между падением напряжения и ростом температуры"
+  ],
+  "current_situation": "Анализ показывает критическую корреляцию между падением напряжения и ростом температуры, что указывает на возможную проблему в энергосистеме или термальном контуре. ADCS_mode стабильный, но есть признаки потери стабилизации. Затмение не объясняет одновременное падение напряжения и рост температуры.",
+  "plan_status": "Проведен начальный анализ классификации и телеметрии, выявлены критические аномалии.",
+  "enough_data": false,
+  "remaining_steps": [
+    "Провести детальный анализ телеметрических данных для подтверждения гипотез",
+    "Оценить влияние текущего состояния на другие подсистемы",
+    "Сформировать план управляющих воздействий"
+  ],
+  "task_completed": false,
+  "function": {
+    "tool_name_discriminator": "computetelemetrydiagnosticstool",
+    "reasoning": "Необходимо провести детальный анализ телеметрических данных для подтверждения гипотез о критической корреляции между падением напряжения и ростом температуры.",
+    "channels": [
+      "Battery_Temp",
+      "Battery_Voltage",
+      "NanoMind_Temp",
+      "ACU2_Temp"
+    ]
+  }
+}
+
+[step 1] tool_execution @ 2026-03-16T21:25:27.403189
+tool_name: computetelemetrydiagnosticstool
+tool_context:
+{
+  "reasoning": "Необходимо провести детальный анализ телеметрических данных для подтверждения гипотез о критической корреляции между падением напряжения и ростом температуры.",
+  "channels": [
+    "Battery_Temp",
+    "Battery_Voltage",
+    "NanoMind_Temp",
+    "ACU2_Temp"
+  ]
+}
+tool_result:
+{
+  "channels_analyzed": [
+    "Battery_Temp",
+    "Battery_Voltage",
+    "NanoMind_Temp",
+    "ACU2_Temp"
+  ],
+  "samples_in_window": 21,
+  "diagnostics": {
+    "Battery_Temp": {
+      "mean": 243.5,
+      "std": 0.5,
+      "delta": 1.0,
+      "slope": 0.40000000000005664
+    },
+    "Battery_Voltage": {
+      "mean": 8000.0,
+      "std": 10.0,
+      "delta": 20.0,
+      "slope": 19.9999999999996
+    },
+    "NanoMind_Temp": {
+      "mean": 287.0,
+      "std": 0.0,
+      "delta": 0.0,
+      "slope": -4.863206192945583e-14
+    },
+    "ACU2_Temp": {
+      "mean": 338.5,
+      "std": 1.5,
+      "delta": 3.0,
+      "slope": 2.9999999999999303
+    }
+  },
+  "subsystem_scores": {
+    "THERMAL": 0.2,
+    "POWER": 0.0,
+    "RF": 0.0,
+    "ADCS": 0.0
+  }
+}
+
+[step 2] reasoning @ 2026-03-16T21:25:46.613433
+{
+  "reasoning_steps": [
+    "Проведен детальный анализ телеметрических данных для подтверждения гипотез о критической корреляции между падением напряжения и ростом температуры.",
+    "Выявлены значительные отклонения в температуре и напряжении, подтверждающие гипотезу о критической корреляции."
+  ],
+  "current_situation": "Анализ показал, что температура батареи и ACU2 резко возросла, а напряжение батареи упало. Это подтверждает гипотезу о критической корреляции между температурой и напряжением.",
+  "plan_status": "Гипотеза подтверждена, требуется разработать план управляющих воздействий.",
+  "enough_data": true,
+  "remaining_steps": [
+    "Разработать план управляющих воздействий для стабилизации температуры и напряжения."
+  ],
+  "task_completed": false,
+  "function": {
+    "tool_name_discriminator": "builduvplantool",
+    "reasoning": "Необходимо разработать план управляющих воздействий для стабилизации температуры и напряжения.",
+    "preferred_actions": [
+      "DECREASE_THERMAL_LOAD",
+      "REDUCE_BATTERY_DISCHARGE_RATE",
+      "ENABLE_THERMAL_DUMPING",
+      "CHECK_SOLAR_PANEL_ORIENTATION"
+    ],
+    "conservative_mode": true
+  }
+}
+
+[step 2] tool_execution @ 2026-03-16T21:25:46.614494
+tool_name: builduvplantool
+tool_context:
+{
+  "reasoning": "Необходимо разработать план управляющих воздействий для стабилизации температуры и напряжения.",
+  "preferred_actions": [
+    "DECREASE_THERMAL_LOAD",
+    "REDUCE_BATTERY_DISCHARGE_RATE",
+    "ENABLE_THERMAL_DUMPING",
+    "CHECK_SOLAR_PANEL_ORIENTATION"
+  ],
+  "conservative_mode": true
+}
+tool_result:
+{
+  "alerts": [
+    "THERMAL_OVERHEAT",
+    "POWER_DEGRADATION",
+    "ADCS_STABILIZATION_LOSS",
+    "SENSOR_DEGRADATION"
+  ],
+  "errors": [
+    "CRITICAL_POWER_THERMAL_COUPLING"
+  ],
+  "uv_plan": [
+    "LIMIT_PAYLOAD_POWER",
+    "PREPARE_SAFE_MODE",
+    "RUN_DIAGNOSTICS",
+    "RUN_ADCS_DIAGNOSTICS",
+    "SWITCH_TO_REDUNDANT_SYSTEM",
+    "ENTER_SAFE_MODE",
+    "DECREASE_THERMAL_LOAD",
+    "REDUCE_BATTERY_DISCHARGE_RATE",
+    "ENABLE_THERMAL_DUMPING",
+    "CHECK_SOLAR_PANEL_ORIENTATION"
+  ],
+  "uv_plan_details": [
+    {
+      "action": "LIMIT_PAYLOAD_POWER",
+      "description": "Снизить нагрузку полезной нагрузки для разгрузки EPS и теплового контура.",
+      "priority": "HIGH",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "PREPARE_SAFE_MODE",
+      "description": "Подготовить безопасный режим без немедленного переключения.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "RUN_DIAGNOSTICS",
+      "description": "Запустить встроенную диагностику подсистем и каналов телеметрии.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "RUN_ADCS_DIAGNOSTICS",
+      "description": "Проверить стабилизацию, датчики и исполнительные органы ADCS.",
+      "priority": "HIGH",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "SWITCH_TO_REDUNDANT_SYSTEM",
+      "description": "Перевести деградирующий канал или датчик на резервный контур.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "ENTER_SAFE_MODE",
+      "description": "Перевести КА в безопасный режим для остановки деградации состояния.",
+      "priority": "HIGH",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "DECREASE_THERMAL_LOAD",
+      "description": "Описание действия формируется агентом.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "REDUCE_BATTERY_DISCHARGE_RATE",
+      "description": "Описание действия формируется агентом.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "ENABLE_THERMAL_DUMPING",
+      "description": "Описание действия формируется агентом.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "CHECK_SOLAR_PANEL_ORIENTATION",
+      "description": "Описание действия формируется агентом.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    }
+  ],
+  "prechecks": [
+    "Проверить доступный энергобаланс EPS",
+    "Проверить активный режим ADCS",
+    "Проверить термозапас ключевых подсистем"
+  ],
+  "postchecks": [
+    "Подтвердить стабилизацию температур",
+    "Проверить восстановление RSSI/телеметрии",
+    "Проверить отсутствие новых error codes"
+  ]
+}
+
+[step 3] reasoning @ 2026-03-16T21:26:02.826934
+{
+  "reasoning_steps": [
+    "Проведен анализ телеметрических данных, подтверждена критическая корреляция между падением напряжения и ростом температуры.",
+    "Разработан план управляющих воздействий для стабилизации температуры и напряжения.",
+    "План включает в себя действия по снижению нагрузки, переходу в безопасный режим и диагностике подсистем."
+  ],
+  "current_situation": "Аномалия подтверждена, план управляющих воздействий разработан. Необходимо выполнить предписанные действия для стабилизации состояния КА.",
+  "plan_status": "План управляющих воздействий готов к выполнению.",
+  "enough_data": true,
+  "remaining_steps": [
+    "Выполнить управляющие воздействия из плана.",
+    "Проверить стабилизацию температуры и напряжения.",
+    "Провести диагностику подсистем."
+  ],
+  "task_completed": false,
+  "function": {
+    "tool_name_discriminator": "finalanswertool",
+    "reasoning": "Завершить задачу и предоставить окончательный ответ с рекомендациями по управляющим воздействиям.",
+    "completed_steps": [
+      "Анализ телеметрических данных",
+      "Разработка плана управляющих воздействий"
+    ],
+    "answer": "Наблюдаемая аномалия: Множественные аномалии в термальном контуре и энергосистеме с критической корреляцией. Доказательства: Рост температуры NanoMind_Temp и ACU2_Temp, падение напряжения Battery_Voltage. Гипотеза причины: Перегрев и деградация энергосистемы. Уровень риска: Высокий. Рекомендованные УВ: LIMIT_PAYLOAD_POWER, PREPARE_SAFE_MODE, RUN_DIAGNOSTICS, RUN_ADCS_DIAGNOSTICS, SWITCH_TO_REDUNDANT_SYSTEM, ENTER_SAFE_MODE, DECREASE_THERMAL_LOAD, REDUCE_BATTERY_DISCHARGE_RATE, ENABLE_THERMAL_DUMPING, CHECK_SOLAR_PANEL_ORIENTATION. Следующие шаги оператора: Выполнить управляющие воздействия из плана, проверить стабилизацию температуры и напряжения, провести диагностику подсистем.",
+    "status": "completed"
+  }
+}
+
+[step 3] tool_execution @ 2026-03-16T21:26:02.827695
+tool_name: finalanswertool
+tool_context:
+{
+  "reasoning": "Завершить задачу и предоставить окончательный ответ с рекомендациями по управляющим воздействиям.",
+  "completed_steps": [
+    "Анализ телеметрических данных",
+    "Разработка плана управляющих воздействий"
+  ],
+  "answer": "Наблюдаемая аномалия: Множественные аномалии в термальном контуре и энергосистеме с критической корреляцией. Доказательства: Рост температуры NanoMind_Temp и ACU2_Temp, падение напряжения Battery_Voltage. Гипотеза причины: Перегрев и деградация энергосистемы. Уровень риска: Высокий. Рекомендованные УВ: LIMIT_PAYLOAD_POWER, PREPARE_SAFE_MODE, RUN_DIAGNOSTICS, RUN_ADCS_DIAGNOSTICS, SWITCH_TO_REDUNDANT_SYSTEM, ENTER_SAFE_MODE, DECREASE_THERMAL_LOAD, REDUCE_BATTERY_DISCHARGE_RATE, ENABLE_THERMAL_DUMPING, CHECK_SOLAR_PANEL_ORIENTATION. Следующие шаги оператора: Выполнить управляющие воздействия из плана, проверить стабилизацию температуры и напряжения, провести диагностику подсистем.",
+  "status": "completed"
+}
+tool_result:
+{
+  "tool_name_discriminator": "finalanswertool",
+  "reasoning": "Завершить задачу и предоставить окончательный ответ с рекомендациями по управляющим воздействиям.",
+  "completed_steps": [
+    "Анализ телеметрических данных",
+    "Разработка плана управляющих воздействий"
+  ],
+  "answer": "Наблюдаемая аномалия: Множественные аномалии в термальном контуре и энергосистеме с критической корреляцией. Доказательства: Рост температуры NanoMind_Temp и ACU2_Temp, падение напряжения Battery_Voltage. Гипотеза причины: Перегрев и деградация энергосистемы. Уровень риска: Высокий. Рекомендованные УВ: LIMIT_PAYLOAD_POWER, PREPARE_SAFE_MODE, RUN_DIAGNOSTICS, RUN_ADCS_DIAGNOSTICS, SWITCH_TO_REDUNDANT_SYSTEM, ENTER_SAFE_MODE, DECREASE_THERMAL_LOAD, REDUCE_BATTERY_DISCHARGE_RATE, ENABLE_THERMAL_DUMPING, CHECK_SOLAR_PANEL_ORIENTATION. Следующие шаги оператора: Выполнить управляющие воздействия из плана, проверить стабилизацию температуры и напряжения, провести диагностику подсистем.",
+  "status": "completed"
+}
+
+custom_context:
+{
+  "window_id": "manual_20240518_1837_1847",
+  "timestamp_start": "2024-05-18T18:37:00Z",
+  "timestamp_end": "2024-05-18T18:47:00Z",
+  "telemetry_summary": {
+    "Battery_Temp": {
+      "mean": 237.14285714285714,
+      "std": 2.8163758252611895,
+      "min": 236.0,
+      "max": 245.0,
+      "last": 245.0
+    },
+    "Battery_Voltage": {
+      "mean": 8187.761904761905,
+      "std": 64.87269934403382,
+      "min": 7990.0,
+      "max": 8213.0,
+      "last": 8109.0
+    },
+    "NanoMind_Temp": {
+      "mean": 258.7142857142857,
+      "std": 11.547594501692126,
+      "min": 254.0,
+      "max": 287.0,
+      "last": 287.0
+    },
+    "ACU2_Temp": {
+      "mean": 272.14285714285717,
+      "std": 27.29954772743404,
+      "min": 261.0,
+      "max": 340.0,
+      "last": 340.0
+    },
+    "Background_RSSI": {
+      "mean": -102.52380952380952,
+      "std": 7.034737261950243,
+      "min": -114.0,
+      "max": -97.0,
+      "last": -101.0
+    },
+    "X_Coarse_Spin": {
+      "mean": -0.001038087443226857,
+      "std": 0.009585276048776513,
+      "min": -0.0316005274653434,
+      "max": 0.0261775385588407,
+      "last": 0.0261775385588407
+    },
+    "Y_Coarse_Spin": {
+      "mean": 0.0035078975238970337,
+      "std": 0.013958417918734095,
+      "min": -0.0164008159190416,
+      "max": 0.0485695414245128,
+      "last": 0.0485695414245128
+    },
+    "Z_Coarse_Spin": {
+      "mean": 0.00832102376790273,
+      "std": 0.020617820633146957,
+      "min": 0.0,
+      "max": 0.0683962851762771,
+      "last": 0.0482578761875629
+    },
+    "PD1_CSS_theta": {
+      "mean": 0.03993210622242519,
+      "std": 0.17858180799617013,
+      "min": 0.0,
+      "max": 0.838574230670929,
+      "last": 0.838574230670929
+    },
+    "ADCS_mode": {
+      "mean": 2.0,
+      "std": 0.0,
+      "min": 2.0,
+      "max": 2.0,
+      "last": 2.0
+    }
+  },
+  "alerts": [
+    "THERMAL_OVERHEAT",
+    "POWER_DEGRADATION",
+    "ADCS_STABILIZATION_LOSS",
+    "SENSOR_DEGRADATION"
+  ],
+  "errors": [
+    "CRITICAL_POWER_THERMAL_COUPLING"
+  ],
+  "orbit_context": {
+    "orbit_lat": 56.68621622706616,
+    "orbit_lon": 18.147102502222847,
+    "orbit_altitude_km": 267.3838072411586,
+    "sun_exposure": false,
+    "is_eclipse": true,
+    "ground_station_visible": true,
+    "distance_to_ground_station_km": 1204.052692686554,
+    "orbital_phase": 0.34249178836913813,
+    "time_since_tle_epoch_sec": 23356.964661
+  },
+  "precomputed_features": {
+    "rough_anomaly_score": 0.8417228453610791,
+    "trends": {
+      "Battery_Temp": 0.2831168831168799,
+      "Battery_Voltage": -6.0402597402594935,
+      "NanoMind_Temp": 1.157142857142852,
+      "ACU2_Temp": 2.7389610389610417,
+      "Background_RSSI": -0.8285714285714294,
+      "X_Coarse_Spin": -0.00017976683213726213,
+      "Y_Coarse_Spin": 0.0009454064796884336,
+      "Z_Coarse_Spin": 0.0020162793287596126,
+      "PD1_CSS_theta": 0.010890574424297783,
+      "ADCS_mode": -8.618612728080111e-18
+    },
+    "change_points": {
+      "Battery_Temp": [
+        50618
+      ],
+      "Battery_Voltage": [
+        50618
+      ],
+      "NanoMind_Temp": [
+        50618
+      ],
+      "ACU2_Temp": [
+        50618
+      ],
+      "Background_RSSI": [],
+      "X_Coarse_Spin": [
+        50620
+      ],
+      "Y_Coarse_Spin": [
+        50619
+      ],
+      "Z_Coarse_Spin": [
+        50618
+      ],
+      "PD1_CSS_theta": [
+        50620
+      ],
+      "ADCS_mode": []
+    },
+    "rolling": {
+      "Battery_Temp": {
+        "rolling_mean": [
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          236.0,
+          237.4,
+          239.0,
+          240.8
+        ],
+        "rolling_std": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          3.1304951684997038,
+          4.123105625617659,
+          4.438468204234426
+        ]
+      },
+      "Battery_Voltage": {
+        "rolling_mean": [
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8213.0,
+          8168.4,
+          8127.8,
+          8107.0
+        ],
+        "rolling_std": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          99.72863179649052,
+          116.87899725784774,
+          106.74033914130115
+        ]
+      },
+      "NanoMind_Temp": {
+        "rolling_mean": [
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          254.0,
+          260.6,
+          267.2,
+          273.8
+        ],
+        "rolling_std": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          14.758048651498605,
+          18.07484439767048,
+          18.07484439767048
+        ]
+      },
+      "ACU2_Temp": {
+        "rolling_mean": [
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          261.0,
+          276.2,
+          292.0,
+          307.8
+        ],
+        "rolling_std": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          33.98823325799681,
+          42.46174749112429,
+          42.73991109022105
+        ]
+      },
+      "Background_RSSI": {
+        "rolling_mean": [
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -97.0,
+          -100.0,
+          -103.0,
+          -106.0,
+          -109.0,
+          -112.0,
+          -112.0,
+          -110.0,
+          -110.4,
+          -108.2
+        ],
+        "rolling_std": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          6.708203932499369,
+          8.215838362577491,
+          8.215838362577491,
+          6.708203932499369,
+          0.0,
+          0.0,
+          4.47213595499958,
+          4.774934554525328,
+          6.180614856144977
+        ]
+      }
+    },
+    "evidence_map": {
+      "THERMAL_OVERHEAT": [
+        "NanoMind_Temp растет в пределах окна",
+        "ACU2_Temp растет в пределах окна"
+      ],
+      "POWER_DEGRADATION": [
+        "Battery_Voltage заметно снижается",
+        "Battery_Temp одновременно растет"
+      ],
+      "ADCS_STABILIZATION_LOSS": [
+        "Наблюдается рост суммарного spin"
+      ],
+      "SENSOR_DEGRADATION": [
+        "Зафиксированы spikes в CSS"
+      ]
+    },
+    "alerts_summary": {
+      "alerts_count": 4,
+      "alerts": [
+        "THERMAL_OVERHEAT",
+        "POWER_DEGRADATION",
+        "ADCS_STABILIZATION_LOSS",
+        "SENSOR_DEGRADATION"
+      ]
+    },
+    "errors_summary": {
+      "errors_count": 1,
+      "errors": [
+        "CRITICAL_POWER_THERMAL_COUPLING"
+      ]
+    },
+    "events": {
+      "alerts_count": 4,
+      "errors_count": 1,
+      "alerts": [
+        "THERMAL_OVERHEAT",
+        "POWER_DEGRADATION",
+        "ADCS_STABILIZATION_LOSS",
+        "SENSOR_DEGRADATION"
+      ],
+      "errors": [
+        "CRITICAL_POWER_THERMAL_COUPLING"
+      ]
+    }
+  },
+  "raw_telemetry_ref": "/data/uhf_telemetry.csv",
+  "tle_ref": "/data/tle_opssat.txt",
+  "classification_context": {
+    "observation": "Множественные аномалии в термальном контуре и энергосистеме с критической корреляцией. ADCS_mode стабильный, но есть признаки потери стабилизации. Затмение в орбитальном контексте не объясняет одновременное падение напряжения и рост температуры.",
+    "evidences": [
+      "THERMAL_OVERHEAT: NanoMind_Temp и ACU2_Temp растут в пределах окна",
+      "POWER_DEGRADATION: Battery_Voltage снижается, Battery_Temp растет",
+      "CRITICAL_POWER_THERMAL_COUPLING: Одновременное повышение температуры и падение напряжения"
+    ],
+    "confidence_alarm": 0.85,
+    "is_anomaly": true,
+    "anomaly_class": "MIXED"
+  },
+  "recent_window_history": [],
+  "deep_uv_plan_actions": [
+    "LIMIT_PAYLOAD_POWER",
+    "PREPARE_SAFE_MODE",
+    "RUN_DIAGNOSTICS",
+    "RUN_ADCS_DIAGNOSTICS",
+    "SWITCH_TO_REDUNDANT_SYSTEM",
+    "ENTER_SAFE_MODE",
+    "DECREASE_THERMAL_LOAD",
+    "REDUCE_BATTERY_DISCHARGE_RATE",
+    "ENABLE_THERMAL_DUMPING",
+    "CHECK_SOLAR_PANEL_ORIENTATION"
+  ],
+  "deep_uv_plan_details": [
+    {
+      "action": "LIMIT_PAYLOAD_POWER",
+      "description": "Снизить нагрузку полезной нагрузки для разгрузки EPS и теплового контура.",
+      "priority": "HIGH",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "PREPARE_SAFE_MODE",
+      "description": "Подготовить безопасный режим без немедленного переключения.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "RUN_DIAGNOSTICS",
+      "description": "Запустить встроенную диагностику подсистем и каналов телеметрии.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "RUN_ADCS_DIAGNOSTICS",
+      "description": "Проверить стабилизацию, датчики и исполнительные органы ADCS.",
+      "priority": "HIGH",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "SWITCH_TO_REDUNDANT_SYSTEM",
+      "description": "Перевести деградирующий канал или датчик на резервный контур.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "ENTER_SAFE_MODE",
+      "description": "Перевести КА в безопасный режим для остановки деградации состояния.",
+      "priority": "HIGH",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "DECREASE_THERMAL_LOAD",
+      "description": "Описание действия формируется агентом.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "REDUCE_BATTERY_DISCHARGE_RATE",
+      "description": "Описание действия формируется агентом.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "ENABLE_THERMAL_DUMPING",
+      "description": "Описание действия формируется агентом.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    },
+    {
+      "action": "CHECK_SOLAR_PANEL_ORIENTATION",
+      "description": "Описание действия формируется агентом.",
+      "priority": "MEDIUM",
+      "prechecks": [
+        "Проверить доступный энергобаланс EPS",
+        "Проверить активный режим ADCS",
+        "Проверить термозапас ключевых подсистем"
+      ],
+      "postchecks": [
+        "Подтвердить стабилизацию температур",
+        "Проверить восстановление RSSI/телеметрии",
+        "Проверить отсутствие новых error codes"
+      ]
+    }
+  ],
+  "deep_uv_plan_prechecks": [
+    "Проверить доступный энергобаланс EPS",
+    "Проверить активный режим ADCS",
+    "Проверить термозапас ключевых подсистем"
+  ],
+  "deep_uv_plan_postchecks": [
+    "Подтвердить стабилизацию температур",
+    "Проверить восстановление RSSI/телеметрии",
+    "Проверить отсутствие новых error codes"
+  ]
+}
+
+final_result:
+Наблюдаемая аномалия: Множественные аномалии в термальном контуре и энергосистеме с критической корреляцией. Доказательства: Рост температуры NanoMind_Temp и ACU2_Temp, падение напряжения Battery_Voltage. Гипотеза причины: Перегрев и деградация энергосистемы. Уровень риска: Высокий. Рекомендованные УВ: LIMIT_PAYLOAD_POWER, PREPARE_SAFE_MODE, RUN_DIAGNOSTICS, RUN_ADCS_DIAGNOSTICS, SWITCH_TO_REDUNDANT_SYSTEM, ENTER_SAFE_MODE, DECREASE_THERMAL_LOAD, REDUCE_BATTERY_DISCHARGE_RATE, ENABLE_THERMAL_DUMPING, CHECK_SOLAR_PANEL_ORIENTATION. Следующие шаги оператора: Выполнить управляющие воздействия из плана, проверить стабилизацию температуры и напряжения, провести диагностику подсистем.

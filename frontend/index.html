@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Стенд анализа телеметрии КА</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css?v=20260317-one-screen-demo" />
+  </head>
+  <body>
+    <header class="topbar shell lab-topbar">
+      <div class="topbar-copy">
+        <p class="eyebrow">НИР · Научно-демонстрационный стенд</p>
+        <h1>Анализ телеметрии космического аппарата</h1>
+      </div>
+      <div class="controls lab-controls">
+        <label class="switcher">
+          <span>Тип НС</span>
+          <select id="scenarioSelect" class="input">
+            <option value="mixed">Смешанная</option>
+            <option value="thermal">Тепловая</option>
+            <option value="power">Энергетическая</option>
+            <option value="adcs">Ориентация (ADCS)</option>
+            <option value="rf">Связь (RF)</option>
+            <option value="nominal">Номинал</option>
+          </select>
+        </label>
+        <label class="switcher switcher-wide">
+          <span>Backend URL</span>
+          <input id="backendUrl" class="input" type="text" value="http://localhost:8000" />
+        </label>
+        <button id="btnRun" class="btn btn-primary" type="button">Анализ датасета</button>
+        <button id="btnReset" class="btn btn-ghost" type="button">Сброс</button>
+      </div>
+    </header>
+
+    <main class="shell scientific-shell">
+      <section class="control-strip">
+        <div class="control-strip-copy">
+          <span id="incidentBadge" class="badge badge-warn">Сценарий: анализ</span>
+        </div>
+        <div class="control-strip-fields">
+          <label class="mission-window-field">
+            <span>`timestamp_start`</span>
+            <input id="manualWindowStart" class="input mission-window-input" type="text" spellcheck="false" value="2024-05-18T18:37:00Z" />
+          </label>
+          <label class="mission-window-field">
+            <span>`timestamp_end`</span>
+            <input id="manualWindowEnd" class="input mission-window-input" type="text" spellcheck="false" value="2024-05-18T18:47:00Z" />
+          </label>
+          <button id="btnRunWindow" class="btn btn-primary" type="button">Анализ выбранного интервала</button>
+        </div>
+      </section>
+
+      <section class="scientific-board">
+        <div class="board-left">
+          <article class="card science-card ka-card">
+            <div class="science-card-head">
+              <div>
+                <p class="card-kicker">Космический аппарат</p>
+                <h2>Состояние КА и переменные НС</h2>
+              </div>
+              <span id="missionRunBadge" class="badge badge-warn">Ожидание</span>
+            </div>
+            <div class="ka-grid">
+              <div class="ka-visual">
+                <svg id="satelliteSvg" viewBox="0 0 680 340" aria-label="Схема спутника">
+                  <rect x="280" y="110" width="120" height="120" rx="10" class="sat-body"></rect>
+                  <rect x="120" y="122" width="140" height="96" rx="8" class="solar-panel"></rect>
+                  <rect x="420" y="122" width="140" height="96" rx="8" class="solar-panel"></rect>
+                  <circle cx="340" cy="100" r="16" class="antenna"></circle>
+                  <rect x="326" y="84" width="28" height="18" class="antenna-base"></rect>
+
+                  <g id="subsystems">
+                    <rect id="subsystem-EPS" x="295" y="126" width="48" height="24" rx="5" class="subsystem"></rect>
+                    <text x="319" y="143" text-anchor="middle">EPS</text>
+
+                    <rect id="subsystem-ADCS" x="348" y="126" width="48" height="24" rx="5" class="subsystem"></rect>
+                    <text x="372" y="143" text-anchor="middle">ADCS</text>
+
+                    <rect id="subsystem-COMM" x="295" y="159" width="48" height="24" rx="5" class="subsystem"></rect>
+                    <text x="319" y="176" text-anchor="middle">COMM</text>
+
+                    <rect id="subsystem-THERMAL" x="348" y="159" width="48" height="24" rx="5" class="subsystem"></rect>
+                    <text x="372" y="176" text-anchor="middle">ТЕПЛ</text>
+
+                    <rect id="subsystem-PAYLOAD" x="321" y="192" width="48" height="24" rx="5" class="subsystem"></rect>
+                    <text x="345" y="209" text-anchor="middle">НАГР</text>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="ka-side">
+                <section class="mini-panel">
+                  <div class="mini-panel-head">
+                    <h3>Контур запуска</h3>
+                    <span id="missionCaseCount" class="rail-count">0</span>
+                  </div>
+                  <div id="missionRunStatus" class="mission-run-status"></div>
+                </section>
+
+                <section class="mini-panel">
+                  <div class="mini-panel-head">
+                    <h3>Переменные НС</h3>
+                    <span id="missionVerdictBadge" class="badge badge-warn">n/a</span>
+                  </div>
+                  <div id="orbitContext" class="science-kv-table"></div>
+                </section>
+
+                <details class="mini-panel mini-panel-collapsible" id="windowsPanel">
+                  <summary class="mini-panel-summary">
+                    <div>
+                      <h3>Интервалы анализа</h3>
+                      <span class="mini-panel-note">скрыты до раскрытия</span>
+                    </div>
+                    <span class="mini-panel-toggle mini-panel-toggle-closed">Показать</span>
+                    <span class="mini-panel-toggle mini-panel-toggle-open">Скрыть</span>
+                  </summary>
+                  <div id="missionDatasetWindows" class="dataset-windows mission-dataset-windows"></div>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article class="card science-card results-card">
+            <div class="science-card-head">
+              <div>
+                <p class="card-kicker">Результаты</p>
+                <h2>Результат анализа для оператора</h2>
+              </div>
+              <span id="missionActionBadge" class="badge badge-warn">Ожидание</span>
+            </div>
+
+            <div class="results-top">
+              <section class="result-block">
+                <h3>Сводка по окну</h3>
+                <div id="missionVerdict" class="mission-verdict"></div>
+              </section>
+              <section class="result-block">
+                <h3>Решение и валидация</h3>
+                <div id="missionOperatorNow" class="mission-operator-now"></div>
+                <div class="verify-box">
+                  <div class="verify-box-head">
+                    <span>Проверка плана</span>
+                    <strong>valid / constraints / recommendations</strong>
+                  </div>
+                  <div id="verifyBlock" class="verify"></div>
+                </div>
+              </section>
+            </div>
+
+            <div class="results-bottom">
+              <section class="result-block result-markdown">
+                <h3>Итоговый отчёт</h3>
+                <div id="finalReport" class="report-markdown"></div>
+              </section>
+              <section class="result-block result-plan">
+                <h3>Список УВ</h3>
+                <ul id="uvPlan" class="uv-list"></ul>
+              </section>
+            </div>
+          </article>
+        </div>
+
+        <div class="board-right">
+          <article class="card science-card graph-card">
+            <div class="science-card-head">
+              <div>
+                <p class="card-kicker">Агент</p>
+                <h2>Граф исполнения</h2>
+              </div>
+              <div id="agentState" class="graph-state">Ожидание</div>
+            </div>
+            <div id="pipelineGraph" class="pipeline"></div>
+          </article>
+
+          <details class="card science-card logs-card">
+            <summary class="science-card-summary">
+              <div>
+                <p class="card-kicker">System Log</p>
+                <h2>Журнал вызовов и решений</h2>
+              </div>
+              <div class="science-card-summary-meta">
+                <span class="log-stream-chip">WS stream</span>
+                <span class="science-card-toggle science-card-toggle-closed">Развернуть</span>
+                <span class="science-card-toggle science-card-toggle-open">Скрыть</span>
+              </div>
+            </summary>
+            <div id="backendLogs" class="backend-logs">Логи будут показаны после запуска анализа.</div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js?v=20260317-one-screen-demo"></script>
+  </body>
+</html>

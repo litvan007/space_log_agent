@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.24.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "space-log-agent"
+version = "0.1.0"
+description = "LangGraph + SGRAgent стенд анализа телеметрии КА с TLE pre-hooks"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.116.0",
+  "uvicorn>=0.35.0",
+  "pydantic>=2.8.0",
+  "pydantic-settings>=2.4.0",
+  "openai>=1.68.0",
+  "langgraph>=0.2.0",
+  "langchain-openai>=0.2.0",
+  "sgr-agent-core>=0.2.0",
+  "pandas>=2.2.0",
+  "numpy>=1.26.0",
+  "sgp4>=2.23",
+  "skyfield>=1.49",
+  "loguru>=0.7.2",
+]
+
+[project.scripts]
+space-log-agent = "space_log_agent.main:main"
+space-log-agent-api = "space_log_agent.api.app:run"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[tool.hatch.build]
+include = [
+  "src/space_log_agent/prompts/*.txt",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/space_log_agent"]

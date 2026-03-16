@@ -1,0 +1,198 @@
+{
+  "id": "space_incident_sgr_7ac327dc-fc2e-47a8-b9eb-d248b9660fec",
+  "model_config": {
+    "base_url": "https://openrouter.ai/api/v1",
+    "model": "qwen/qwen3-32b",
+    "max_tokens": 8000,
+    "temperature": 0.0
+  },
+  "task_messages": [
+    {
+      "role": "user",
+      "content": "# Входные данные окна инцидента\n\n<INSTRUCTION>\nВыполни технический анализ инцидента КА по данным ниже.\nСчитай этот JSON единственным источником фактов.\nИспользуй вывод ноды классификации как приоритетный стартовый контекст расследования.\n</INSTRUCTION>\n\n## Вывод классификации (SO)\n```json\n{\n  \"observation\": \"Наблюдается потеря стабилизации по ADCS, увеличение угловых скоростей по осям X, Y, Z. ADCS_mode изменился в пределах окна. RSSI Background ухудшается.\",\n  \"evidences\": [\n    \"ADCS_STABILIZATION_LOSS\",\n    \"Рост X_Coarse_Spin с 0.01 до 0.07\",\n    \"Рост Y_Coarse_Spin с 0.0 до 0.06\",\n    \"Рост Z_Coarse_Spin с 0.01 до 0.08\",\n    \"ADCS_mode изменился с 3.0 до 4.0\",\n    \"Background_RSSI ухудшился до -118.0\"\n  ],\n  \"confidence_alarm\": 0.85,\n  \"is_anomaly\": true,\n  \"anomaly_class\": \"ADCS\"\n}\n```\n\n## IncidentEnvelope\n```json\n{\n  \"window_id\": \"window_00001\",\n  \"timestamp_start\": \"2024-05-01T04:57:00Z\",\n  \"timestamp_end\": \"2024-05-01T05:07:00Z\",\n  \"telemetry_summary\": {\n    \"Battery_Temp\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"Battery_Voltage\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"NanoMind_Temp\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"ACU2_Temp\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"Background_RSSI\": {\n      \"mean\": -115.23809523809524,\n      \"std\": 5.254519704431893,\n      \"min\": -120.0,\n      \"max\": -102.0,\n      \"last\": -118.0\n    },\n    \"X_Coarse_Spin\": {\n      \"mean\": 0.04,\n      \"std\": 0.01820930936000652,\n      \"min\": 0.01,\n      \"max\": 0.07,\n      \"last\": 0.07\n    },\n    \"Y_Coarse_Spin\": {\n      \"mean\": 0.030000000000000006,\n      \"std\": 0.018209309360006518,\n      \"min\": 0.0,\n      \"max\": 0.06,\n      \"last\": 0.06\n    },\n    \"Z_Coarse_Spin\": {\n      \"mean\": 0.045,\n      \"std\": 0.021244194253340936,\n      \"min\": 0.01,\n      \"max\": 0.08,\n      \"last\": 0.08\n    },\n    \"PD1_CSS_theta\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"ADCS_mode\": {\n      \"mean\": 3.4761904761904763,\n      \"std\": 0.49943278484292924,\n      \"min\": 3.0,\n      \"max\": 4.0,\n      \"last\": 4.0\n    }\n  },\n  \"alerts\": [\n    \"ADCS_STABILIZATION_LOSS\"\n  ],\n  \"errors\": [],\n  \"orbit_context\": {\n    \"orbit_lat\": 77.75812393358612,\n    \"orbit_lon\": -113.34672088747345,\n    \"orbit_altitude_km\": 341.37553797663185,\n    \"sun_exposure\": false,\n    \"is_eclipse\": true,\n    \"ground_station_visible\": false,\n    \"distance_to_ground_station_km\": 5035.940496849118,\n    \"orbital_phase\": 0.2784344278058909,\n    \"time_since_tle_epoch_sec\": 12453.233276\n  },\n  \"precomputed_features\": {\n    \"rough_anomaly_score\": 0.4315208429435776,\n    \"trends\": {\n      \"Battery_Temp\": 0.0,\n      \"Battery_Voltage\": 0.0,\n      \"NanoMind_Temp\": 0.0,\n      \"ACU2_Temp\": 0.0,\n      \"Background_RSSI\": -0.584415584415583,\n      \"X_Coarse_Spin\": 0.0031578947368421048,\n      \"Y_Coarse_Spin\": 0.0031578947368421048,\n      \"Z_Coarse_Spin\": 0.003684210526315788,\n      \"PD1_CSS_theta\": 0.0,\n      \"ADCS_mode\": 0.07142857142857138\n    },\n    \"change_points\": {\n      \"Battery_Temp\": [],\n      \"Battery_Voltage\": [],\n      \"NanoMind_Temp\": [],\n      \"ACU2_Temp\": [],\n      \"Background_RSSI\": [\n        5\n      ],\n      \"X_Coarse_Spin\": [],\n      \"Y_Coarse_Spin\": [],\n      \"Z_Coarse_Spin\": [\n        16\n      ],\n      \"PD1_CSS_theta\": [],\n      \"ADCS_mode\": [\n        11\n      ]\n    },\n    \"rolling\": {\n      \"Battery_Temp\": {\n        \"rolling_mean\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ]\n      },\n      \"Battery_Voltage\": {\n        \"rolling_mean\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ]\n      },\n      \"NanoMind_Temp\": {\n        \"rolling_mean\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ]\n      },\n      \"ACU2_Temp\": {\n        \"rolling_mean\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ]\n      },\n      \"Background_RSSI\": {\n        \"rolling_mean\": [\n          -111.0,\n          -106.5,\n          -107.66666666666667,\n          -107.0,\n          -106.4,\n          -107.8,\n          -111.0,\n          -113.0,\n          -115.4,\n          -118.0,\n          -118.0,\n          -118.0,\n          -117.6,\n          -117.8,\n          -118.0,\n          -118.0,\n          -118.0,\n          -118.0,\n          -118.0,\n          -118.0,\n          -118.0\n        ],\n        \"rolling_std\": [\n          0.0,\n          6.363961030678928,\n          4.932882862316246,\n          4.242640687119285,\n          3.9115214431215897,\n          6.418722614352486,\n          6.78232998312527,\n          7.810249675906656,\n          6.465291950097847,\n          1.2247448713915883,\n          1.2247448713915883,\n          1.2247448713915883,\n          0.5477225575051652,\n          0.44721359549995815,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ]\n      }\n    },\n    \"evidence_map\": {\n      \"ADCS_STABILIZATION_LOSS\": [\n        \"Наблюдается рост суммарного spin\",\n        \"ADCS_mode изменился в пределах окна\"\n      ]\n    },\n    \"alerts_summary\": {\n      \"alerts_count\": 1,\n      \"alerts\": [\n        \"ADCS_STABILIZATION_LOSS\"\n      ]\n    },\n    \"errors_summary\": {\n      \"errors_count\": 0,\n      \"errors\": []\n    },\n    \"events\": {\n      \"alerts_count\": 1,\n      \"errors_count\": 0,\n      \"alerts\": [\n        \"ADCS_STABILIZATION_LOSS\"\n      ],\n      \"errors\": []\n    }\n  },\n  \"raw_telemetry_ref\": \"/data/uhf_telemetry.csv\",\n  \"tle_ref\": \"/data/tle_opssat.txt\"\n}\n```\n\n<EXPECTED_BEHAVIOR>\n- Начни deep analysis с проверки/уточнения гипотез из блока классификации.\n- Учитывай телеметрию и орбитальный контекст совместно.\n- Отделяй причины аномалии от сопутствующих факторов.\n- Предлагай УВ с учетом безопасности выполнения.\n- Если `orbit_context.ground_station_visible != true`, не предлагай действия, требующие активного окна связи.\n- Если есть `POWER_DEGRADATION`, не предлагай `INCREASE_TELEMETRY_RATE`.\n- Если окно связи отсутствует, не предлагай `REPEAT_CONTACT_SESSION` как немедленное УВ.\n</EXPECTED_BEHAVIOR>"
+    }
+  ],
+  "toolkit": [
+    "inspectincidentenvelopetool",
+    "computetelemetrydiagnosticstool",
+    "builduvplantool",
+    "finalanswertool"
+  ],
+  "log": [
+    {
+      "step_number": 1,
+      "timestamp": "2026-03-15T20:02:29.117842",
+      "step_type": "reasoning",
+      "agent_reasoning": {
+        "reasoning_steps": [
+          "Начало расследования инцидента ADCS на основе данных телеметрии и орбитального контекста.",
+          "Потеря стабилизации и изменение ADCS_mode указывают на возможную неисправность системы ориентации.",
+          "Ухудшение RSSI может быть связано с изменением ориентации КА."
+        ],
+        "current_situation": "Анализ показывает, что КА потерял стабилизацию, угловые скорости увеличились, ADCS_mode изменился, а RSSI Background ухудшился. Орбитальный контекст указывает на нахождение КА в тени Земли.",
+        "plan_status": "Проведен анализ данных телеметрии и орбитального контекста.",
+        "enough_data": true,
+        "remaining_steps": [
+          "Формирование плана управляющих воздействий.",
+          "Подтверждение гипотезы о неисправности ADCS.",
+          "Оценка влияния ухудшения RSSI на связь."
+        ],
+        "task_completed": false,
+        "function": {
+          "tool_name_discriminator": "builduvplantool",
+          "reasoning": "Необходимо сформировать план управляющих воздействий для восстановления стабилизации КА и проверки состояния ADCS.",
+          "preferred_actions": [
+            "ADCS_RECONFIGURE",
+            "ADCS_MODE_SWITCH",
+            "ADCS_CALIBRATION",
+            "ADCS_LOG_DUMP",
+            "TELEMETRY_DUMP",
+            "ORBITAL_ANALYSIS"
+          ],
+          "conservative_mode": true
+        }
+      }
+    },
+    {
+      "step_number": 1,
+      "timestamp": "2026-03-15T20:02:29.118476",
+      "step_type": "tool_execution",
+      "tool_name": "builduvplantool",
+      "agent_tool_context": {
+        "reasoning": "Необходимо сформировать план управляющих воздействий для восстановления стабилизации КА и проверки состояния ADCS.",
+        "preferred_actions": [
+          "ADCS_RECONFIGURE",
+          "ADCS_MODE_SWITCH",
+          "ADCS_CALIBRATION",
+          "ADCS_LOG_DUMP",
+          "TELEMETRY_DUMP",
+          "ORBITAL_ANALYSIS"
+        ],
+        "conservative_mode": true
+      },
+      "agent_tool_execution_result": "{\n  \"alerts\": [\n    \"ADCS_STABILIZATION_LOSS\"\n  ],\n  \"errors\": [],\n  \"uv_plan\": [\n    \"RUN_ADCS_DIAGNOSTICS\",\n    \"PREPARE_SAFE_MODE\",\n    \"ADCS_RECONFIGURE\",\n    \"ADCS_MODE_SWITCH\",\n    \"ADCS_CALIBRATION\",\n    \"ADCS_LOG_DUMP\",\n    \"TELEMETRY_DUMP\",\n    \"ORBITAL_ANALYSIS\"\n  ],\n  \"prechecks\": [\n    \"Проверить доступный энергобаланс EPS\",\n    \"Проверить активный режим ADCS\",\n    \"Проверить термозапас ключевых подсистем\"\n  ],\n  \"postchecks\": [\n    \"Подтвердить стабилизацию температур\",\n    \"Проверить восстановление RSSI/телеметрии\",\n    \"Проверить отсутствие новых error codes\"\n  ]\n}"
+    },
+    {
+      "step_number": 2,
+      "timestamp": "2026-03-15T20:04:02.721623",
+      "step_type": "reasoning",
+      "agent_reasoning": {
+        "reasoning_steps": [
+          "1. Потеря стабилизации подтверждается ростом угловых скоростей (X: +0.06, Y: +0.06, Z: +0.07) и изменением ADCS_mode",
+          "2. Ухудшение RSSI (-118.0 дБм) указывает на возможную потерю связи из-за некорректной ориентации",
+          "3. Отсутствие данных по батарее требует проверки работоспособности датчиков перед выполнением энергоемких УВ"
+        ],
+        "current_situation": "Наблюдается потеря стабилизации КА с ростом угловых скоростей по всем осям. ADCS перешел в режим 4.0 (возможно аварийный). RSSI ухудшился до -118.0 дБм. КА находится в тени Земли (eclipse) с нулевой солнечной экспозицией. Орбитальная высота 341 км. Окно связи с наземной станцией отсутствует (5035 км",
+        "plan_status": "ready",
+        "enough_data": true,
+        "remaining_steps": [
+          "Проверить выполнение предварительных условий",
+          "Отправить команды диагностики ADCS",
+          "Оценить данные после выполнения УВ"
+        ],
+        "task_completed": true,
+        "function": {
+          "tool_name_discriminator": "inspectincidentenvelopetool",
+          "reasoning": "Все параметры ADCS подтверждают потерю стабилизации. Изменение ADCS_mode и рост угловых скоростей указывают на сбой системы ориентации. Ухудшение RSSI коррелирует с некорректной ориентацией антенн. Отсутствие данных по температуре и напряжению батареи требует дополнительной проверки работоспособности датчиков",
+          "focus": "telemetry_summary"
+        }
+      }
+    },
+    {
+      "step_number": 2,
+      "timestamp": "2026-03-15T20:04:02.722441",
+      "step_type": "tool_execution",
+      "tool_name": "inspectincidentenvelopetool",
+      "agent_tool_context": {
+        "reasoning": "Все параметры ADCS подтверждают потерю стабилизации. Изменение ADCS_mode и рост угловых скоростей указывают на сбой системы ориентации. Ухудшение RSSI коррелирует с некорректной ориентацией антенн. Отсутствие данных по температуре и напряжению батареи требует дополнительной проверки работоспособности датчиков",
+        "focus": "telemetry_summary"
+      },
+      "agent_tool_execution_result": "{\n  \"focus\": \"telemetry_summary\",\n  \"selected\": {\n    \"telemetry_summary\": {\n      \"Battery_Temp\": {\n        \"mean\": null,\n        \"std\": null,\n        \"min\": null,\n        \"max\": null,\n        \"last\": null\n      },\n      \"Battery_Voltage\": {\n        \"mean\": null,\n        \"std\": null,\n        \"min\": null,\n        \"max\": null,\n        \"last\": null\n      },\n      \"NanoMind_Temp\": {\n        \"mean\": null,\n        \"std\": null,\n        \"min\": null,\n        \"max\": null,\n        \"last\": null\n      },\n      \"ACU2_Temp\": {\n        \"mean\": null,\n        \"std\": null,\n        \"min\": null,\n        \"max\": null,\n        \"last\": null\n      },\n      \"Background_RSSI\": {\n        \"mean\": -115.23809523809524,\n        \"std\": 5.254519704431893,\n        \"min\": -120.0,\n        \"max\": -102.0,\n        \"last\": -118.0\n      },\n      \"X_Coarse_Spin\": {\n        \"mean\": 0.04,\n        \"std\": 0.01820930936000652,\n        \"min\": 0.01,\n        \"max\": 0.07,\n        \"last\": 0.07\n      },\n      \"Y_Coarse_Spin\": {\n        \"mean\": 0.030000000000000006,\n        \"std\": 0.018209309360006518,\n        \"min\": 0.0,\n        \"max\": 0.06,\n        \"last\": 0.06\n      },\n      \"Z_Coarse_Spin\": {\n        \"mean\": 0.045,\n        \"std\": 0.021244194253340936,\n        \"min\": 0.01,\n        \"max\": 0.08,\n        \"last\": 0.08\n      },\n      \"PD1_CSS_theta\": {\n        \"mean\": null,\n        \"std\": null,\n        \"min\": null,\n        \"max\": null,\n        \"last\": null\n      },\n      \"ADCS_mode\": {\n        \"mean\": 3.4761904761904763,\n        \"std\": 0.49943278484292924,\n        \"min\": 3.0,\n        \"max\": 4.0,\n        \"last\": 4.0\n      }\n    }\n  }\n}"
+    },
+    {
+      "step_number": 3,
+      "timestamp": "2026-03-15T20:05:57.697124",
+      "step_type": "reasoning",
+      "agent_reasoning": {
+        "reasoning_steps": [
+          "1. Потеря стабилизации ADCS подтверждена ростом угловых скоростей и изменением режима. 2. Ухудшение RSSI указывает на некорректную ориентацию антенн. 3. Отсутствие данных о температуре и напряжении батареи требует проверки датчиков. 4. Спутник находится в тени, что ограничивает возможность немедленного вмешательства. 5. Сформирован план автономных УВ для восстановления стабилизации и диагностики.",
+          "6. Уровень риска оценен как средний из-за потери ориентации, но без критических ошибок.",
+          "7. Следующие шаги оператора включают ожидание следующего окна связи и выполнение диагностики."
+        ],
+        "current_situation": "Спутник находится в тени (eclipse), нет видимости наземной станции. ADCS_mode переключился с 3.0 до 4.0, угловые скорости по всем осям увеличились. RSSI Background ухудшился до -118.0 дБ. Данные по температуре и напряжению батареи отсутствуют.",
+        "plan_status": "completed",
+        "enough_data": true,
+        "remaining_steps": [
+          "Ожидание следующего окна связи для выполнения диагностики и подтверждения восстановления стабилизации.",
+          "Проверка логов ADCS и телеметрии после выполнения УВ."
+        ],
+        "task_completed": true,
+        "function": {
+          "tool_name_discriminator": "inspectincidentenvelopetool",
+          "reasoning": "Все параметры ADCS подтверждают потерю стабилизации. Изменение ADCS_mode и рост угловых скоростей указывают на сбой системы ориентации. Ухудшение RSSI коррелирует с некорректной ориентацией антенн. Отсутствие данных по температуре и напряжению требует дополнительной проверки работоспособности датчиков.",
+          "focus": "telemetry_summary"
+        }
+      }
+    },
+    {
+      "step_number": 3,
+      "timestamp": "2026-03-15T20:05:57.697909",
+      "step_type": "tool_execution",
+      "tool_name": "inspectincidentenvelopetool",
+      "agent_tool_context": {
+        "reasoning": "Все параметры ADCS подтверждают потерю стабилизации. Изменение ADCS_mode и рост угловых скоростей указывают на сбой системы ориентации. Ухудшение RSSI коррелирует с некорректной ориентацией антенн. Отсутствие данных по температуре и напряжению требует дополнительной проверки работоспособности датчиков.",
+        "focus": "telemetry_summary"
+      },
+      "agent_tool_execution_result": "{\n  \"focus\": \"telemetry_summary\",\n  \"selected\": {\n    \"telemetry_summary\": {\n      \"Battery_Temp\": {\n        \"mean\": null,\n        \"std\": null,\n        \"min\": null,\n        \"max\": null,\n        \"last\": null\n      },\n      \"Battery_Voltage\": {\n        \"mean\": null,\n        \"std\": null,\n        \"min\": null,\n        \"max\": null,\n        \"last\": null\n      },\n      \"NanoMind_Temp\": {\n        \"mean\": null,\n        \"std\": null,\n        \"min\": null,\n        \"max\": null,\n        \"last\": null\n      },\n      \"ACU2_Temp\": {\n        \"mean\": null,\n        \"std\": null,\n        \"min\": null,\n        \"max\": null,\n        \"last\": null\n      },\n      \"Background_RSSI\": {\n        \"mean\": -115.23809523809524,\n        \"std\": 5.254519704431893,\n        \"min\": -120.0,\n        \"max\": -102.0,\n        \"last\": -118.0\n      },\n      \"X_Coarse_Spin\": {\n        \"mean\": 0.04,\n        \"std\": 0.01820930936000652,\n        \"min\": 0.01,\n        \"max\": 0.07,\n        \"last\": 0.07\n      },\n      \"Y_Coarse_Spin\": {\n        \"mean\": 0.030000000000000006,\n        \"std\": 0.018209309360006518,\n        \"min\": 0.0,\n        \"max\": 0.06,\n        \"last\": 0.06\n      },\n      \"Z_Coarse_Spin\": {\n        \"mean\": 0.045,\n        \"std\": 0.021244194253340936,\n        \"min\": 0.01,\n        \"max\": 0.08,\n        \"last\": 0.08\n      },\n      \"PD1_CSS_theta\": {\n        \"mean\": null,\n        \"std\": null,\n        \"min\": null,\n        \"max\": null,\n        \"last\": null\n      },\n      \"ADCS_mode\": {\n        \"mean\": 3.4761904761904763,\n        \"std\": 0.49943278484292924,\n        \"min\": 3.0,\n        \"max\": 4.0,\n        \"last\": 4.0\n      }\n    }\n  }\n}"
+    },
+    {
+      "step_number": 4,
+      "timestamp": "2026-03-15T20:06:25.882688",
+      "step_type": "reasoning",
+      "agent_reasoning": {
+        "reasoning_steps": [
+          "Потеря стабилизации подтверждена ростом угловых скоростей и изменением ADCS_mode",
+          "Отсутствие данных по температуре и напряжению батареи требует дополнительной проверки",
+          "Ухудшение RSSI коррелирует с некорректной ориентацией антенн"
+        ],
+        "current_situation": "Инцидент ADCS подтвержден, но требуется дополнительная диагностика для точного определения причины. Следующий шаг - ожидание окна связи для выполнения диагностики и подтверждения восстановления стабилизации.",
+        "plan_status": "План УВ сформирован, ожидается окно связи для выполнения диагностики",
+        "enough_data": false,
+        "remaining_steps": [
+          "Ожидать следующее окно связи",
+          "Выполнить диагностику ADCS",
+          "Подтвердить восстановление стабилизации"
+        ],
+        "task_completed": false,
+        "function": {
+          "tool_name_discriminator": "finalanswertool",
+          "reasoning": "Завершение анализа инцидента и формирование финального ответа",
+          "completed_steps": [
+            "Потеря стабилизации подтверждена",
+            "Сформирован план УВ",
+            "Ожидается окно связи для выполнения диагностики"
+          ],
+          "answer": "### Наблюдаемая аномалия\nПотеря стабилизации КА, увеличение угловых скоростей по осям X, Y, Z. ADCS_mode изменился в пределах окна. RSSI Background ухудшается.\n\n### Доказательства\n- ADCS_STABILIZATION_LOSS\n- Рост X_Coarse_Spin с 0.01 до 0.07\n- Рост Y_Coarse_Spin с 0.0 до 0.06\n- Рост Z_Coarse_Spin с 0.01 до 0.08\n- ADCS_mode изменился с 3.0 до 4.0\n- Background_RSSI ухудшился до -118.0\n\n### Гипотеза причины\nСбой системы ориентации (ADCS) с изменением режима работы и увеличением угловых скоростей. Возможная корреляция с некорректной ориентацией антенн, что подтверждается ухудшением RSSI.\n\n### Уровень риска\nВысокий. Потеря стабилизации может привести к потере связи и повреждению оборудования.\n\n### Рекомендованные УВ\n1. Ожидать следующее окно связи\n2. Выполнить диагностику ADCS\n3. Подтвердить восстановление стабилизации\n\n### Следующие шаги оператора\n1. Ожидать следующее окно связи\n2. Выполнить диагностику ADCS\n3. Подтвердить восстановление стабилизации",
+          "status": "completed"
+        }
+      }
+    },
+    {
+      "step_number": 4,
+      "timestamp": "2026-03-15T20:06:25.883218",
+      "step_type": "tool_execution",
+      "tool_name": "finalanswertool",
+      "agent_tool_context": {
+        "reasoning": "Завершение анализа инцидента и формирование финального ответа",
+        "completed_steps": [
+          "Потеря стабилизации подтверждена",
+          "Сформирован план УВ",
+          "Ожидается окно связи для выполнения диагностики"
+        ],
+        "answer": "### Наблюдаемая аномалия\nПотеря стабилизации КА, увеличение угловых скоростей по осям X, Y, Z. ADCS_mode изменился в пределах окна. RSSI Background ухудшается.\n\n### Доказательства\n- ADCS_STABILIZATION_LOSS\n- Рост X_Coarse_Spin с 0.01 до 0.07\n- Рост Y_Coarse_Spin с 0.0 до 0.06\n- Рост Z_Coarse_Spin с 0.01 до 0.08\n- ADCS_mode изменился с 3.0 до 4.0\n- Background_RSSI ухудшился до -118.0\n\n### Гипотеза причины\nСбой системы ориентации (ADCS) с изменением режима работы и увеличением угловых скоростей. Возможная корреляция с некорректной ориентацией антенн, что подтверждается ухудшением RSSI.\n\n### Уровень риска\nВысокий. Потеря стабилизации может привести к потере связи и повреждению оборудования.\n\n### Рекомендованные УВ\n1. Ожидать следующее окно связи\n2. Выполнить диагностику ADCS\n3. Подтвердить восстановление стабилизации\n\n### Следующие шаги оператора\n1. Ожидать следующее окно связи\n2. Выполнить диагностику ADCS\n3. Подтвердить восстановление стабилизации",
+        "status": "completed"
+      },
+      "agent_tool_execution_result": "{\n  \"tool_name_discriminator\": \"finalanswertool\",\n  \"reasoning\": \"Завершение анализа инцидента и формирование финального ответа\",\n  \"completed_steps\": [\n    \"Потеря стабилизации подтверждена\",\n    \"Сформирован план УВ\",\n    \"Ожидается окно связи для выполнения диагностики\"\n  ],\n  \"answer\": \"### Наблюдаемая аномалия\\nПотеря стабилизации КА, увеличение угловых скоростей по осям X, Y, Z. ADCS_mode изменился в пределах окна. RSSI Background ухудшается.\\n\\n### Доказательства\\n- ADCS_STABILIZATION_LOSS\\n- Рост X_Coarse_Spin с 0.01 до 0.07\\n- Рост Y_Coarse_Spin с 0.0 до 0.06\\n- Рост Z_Coarse_Spin с 0.01 до 0.08\\n- ADCS_mode изменился с 3.0 до 4.0\\n- Background_RSSI ухудшился до -118.0\\n\\n### Гипотеза причины\\nСбой системы ориентации (ADCS) с изменением режима работы и увеличением угловых скоростей. Возможная корреляция с некорректной ориентацией антенн, что подтверждается ухудшением RSSI.\\n\\n### Уровень риска\\nВысокий. Потеря стабилизации может привести к потере связи и повреждению оборудования.\\n\\n### Рекомендованные УВ\\n1. Ожидать следующее окно связи\\n2. Выполнить диагностику ADCS\\n3. Подтвердить восстановление стабилизации\\n\\n### Следующие шаги оператора\\n1. Ожидать следующее окно связи\\n2. Выполнить диагностику ADCS\\n3. Подтвердить восстановление стабилизации\",\n  \"status\": \"completed\"\n}"
+    }
+  ]
+}

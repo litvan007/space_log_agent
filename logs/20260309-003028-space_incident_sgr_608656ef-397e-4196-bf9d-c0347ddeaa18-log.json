@@ -1,0 +1,115 @@
+{
+  "id": "space_incident_sgr_608656ef-397e-4196-bf9d-c0347ddeaa18",
+  "model_config": {
+    "base_url": "https://openrouter.ai/api/v1",
+    "model": "qwen/qwen3-32b",
+    "max_tokens": 8000,
+    "temperature": 0.0
+  },
+  "task_messages": [
+    {
+      "role": "user",
+      "content": "# Входные данные окна инцидента\n\n<INSTRUCTION>\nВыполни технический анализ инцидента КА по данным ниже.\nСчитай этот JSON единственным источником фактов.\nИспользуй вывод ноды классификации как приоритетный стартовый контекст расследования.\n</INSTRUCTION>\n\n## Вывод классификации (SO)\n```json\n{\n  \"observation\": \"Окно находится в тени (is_eclipse: true), RSSI Background показывает ухудшение (-118.0), но отсутствуют конкретные аномалии в alerts/errors и недостаточно данных по другим каналам для однозначной классификации\",\n  \"evidences\": [\n    \"Нет активных alert или error\",\n    \"Многие телеметрические параметры отсутствуют (null)\"\n  ],\n  \"confidence_alarm\": 0.2,\n  \"is_anomaly\": true,\n  \"anomaly_class\": \"UNKNOWN\"\n}\n```\n\n## IncidentEnvelope\n```json\n{\n  \"window_id\": \"window_00001\",\n  \"timestamp_start\": \"2024-05-01T04:57:00Z\",\n  \"timestamp_end\": \"2024-05-01T05:07:00Z\",\n  \"telemetry_summary\": {\n    \"Battery_Temp\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"Battery_Voltage\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"NanoMind_Temp\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"ACU2_Temp\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"Background_RSSI\": {\n      \"mean\": -115.23809523809524,\n      \"std\": 5.254519704431893,\n      \"min\": -120.0,\n      \"max\": -102.0,\n      \"last\": -118.0\n    },\n    \"X_Coarse_Spin\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"Y_Coarse_Spin\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"Z_Coarse_Spin\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"PD1_CSS_theta\": {\n      \"mean\": null,\n      \"std\": null,\n      \"min\": null,\n      \"max\": null,\n      \"last\": null\n    },\n    \"ADCS_mode\": {\n      \"mean\": 3.0,\n      \"std\": 0.0,\n      \"min\": 3.0,\n      \"max\": 3.0,\n      \"last\": 3.0\n    }\n  },\n  \"alerts\": [],\n  \"errors\": [],\n  \"orbit_context\": {\n    \"orbit_lat\": 77.75812393358612,\n    \"orbit_lon\": -113.34672088747345,\n    \"orbit_altitude_km\": 341.37553797663185,\n    \"sun_exposure\": false,\n    \"is_eclipse\": true,\n    \"ground_station_visible\": false,\n    \"distance_to_ground_station_km\": 5035.940496849118,\n    \"orbital_phase\": 0.2784344278058909,\n    \"time_since_tle_epoch_sec\": 12453.233276\n  },\n  \"precomputed_features\": {\n    \"rough_anomaly_score\": 0.2838595222551748,\n    \"trends\": {\n      \"Battery_Temp\": 0.0,\n      \"Battery_Voltage\": 0.0,\n      \"NanoMind_Temp\": 0.0,\n      \"ACU2_Temp\": 0.0,\n      \"Background_RSSI\": -0.5844155844155836,\n      \"X_Coarse_Spin\": 0.0,\n      \"Y_Coarse_Spin\": 0.0,\n      \"Z_Coarse_Spin\": 0.0,\n      \"PD1_CSS_theta\": 0.0,\n      \"ADCS_mode\": 1.6579035765275253e-17\n    },\n    \"change_points\": {\n      \"Battery_Temp\": [],\n      \"Battery_Voltage\": [],\n      \"NanoMind_Temp\": [],\n      \"ACU2_Temp\": [],\n      \"Background_RSSI\": [\n        5\n      ],\n      \"X_Coarse_Spin\": [],\n      \"Y_Coarse_Spin\": [],\n      \"Z_Coarse_Spin\": [],\n      \"PD1_CSS_theta\": [],\n      \"ADCS_mode\": []\n    },\n    \"rolling\": {\n      \"Battery_Temp\": {\n        \"rolling_mean\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ]\n      },\n      \"Battery_Voltage\": {\n        \"rolling_mean\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ]\n      },\n      \"NanoMind_Temp\": {\n        \"rolling_mean\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ]\n      },\n      \"ACU2_Temp\": {\n        \"rolling_mean\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ],\n        \"rolling_std\": [\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ]\n      },\n      \"Background_RSSI\": {\n        \"rolling_mean\": [\n          -111.0,\n          -106.5,\n          -107.66666666666667,\n          -107.0,\n          -106.4,\n          -107.8,\n          -111.0,\n          -113.0,\n          -115.4,\n          -118.0,\n          -118.0,\n          -118.0,\n          -117.6,\n          -117.8,\n          -118.0,\n          -118.0,\n          -118.0,\n          -118.0,\n          -118.0,\n          -118.0,\n          -118.0\n        ],\n        \"rolling_std\": [\n          0.0,\n          6.363961030678928,\n          4.932882862316246,\n          4.242640687119285,\n          3.9115214431215897,\n          6.418722614352486,\n          6.78232998312527,\n          7.810249675906656,\n          6.465291950097847,\n          1.2247448713915883,\n          1.2247448713915883,\n          1.2247448713915883,\n          0.5477225575051652,\n          0.44721359549995815,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0,\n          0.0\n        ]\n      }\n    },\n    \"evidence_map\": {},\n    \"alerts_summary\": {\n      \"alerts_count\": 0,\n      \"alerts\": []\n    },\n    \"errors_summary\": {\n      \"errors_count\": 0,\n      \"errors\": []\n    },\n    \"events\": {\n      \"alerts_count\": 0,\n      \"errors_count\": 0,\n      \"alerts\": [],\n      \"errors\": []\n    }\n  },\n  \"raw_telemetry_ref\": \"/Users/litvan/Downloads/UHF_TM_notebook/uhf_telemetry.csv\",\n  \"tle_ref\": \"/Users/litvan/Downloads/UHF_TM_notebook/tle_opssat.txt\"\n}\n```\n\n<EXPECTED_BEHAVIOR>\n- Начни deep analysis с проверки/уточнения гипотез из блока классификации.\n- Учитывай телеметрию и орбитальный контекст совместно.\n- Отделяй причины аномалии от сопутствующих факторов.\n- Предлагай УВ с учетом безопасности выполнения.\n</EXPECTED_BEHAVIOR>"
+    }
+  ],
+  "toolkit": [
+    "inspectincidentenvelopetool",
+    "computetelemetrydiagnosticstool",
+    "builduvplantool",
+    "finalanswertool"
+  ],
+  "log": [
+    {
+      "step_number": 1,
+      "timestamp": "2026-03-09T00:29:51.740809",
+      "step_type": "reasoning",
+      "agent_reasoning": {
+        "reasoning_steps": [
+          "Начинаю анализ инцидента КА на основе данных из IncidentEnvelope и вывода классификации.",
+          "Проверяю гипотезу о возможной аномалии в связи с нахождением КА в тени и ухудшением RSSI."
+        ],
+        "current_situation": "Инцидент произошел 1 мая 2024 года в период нахождения КА в тени Земли. RSSI Background ухудшился до -118.0, но отсутствуют активные alert или error. Многие телеметрические параметры отсутствуют (null).",
+        "plan_status": "Проведен начальный анализ, требуется дополнительная диагностика телеметрии.",
+        "enough_data": false,
+        "remaining_steps": [
+          "Выполнить диагностику телеметрии для уточнения возможных аномалий.",
+          "Построить план управляющих воздействий на основе полученных данных."
+        ],
+        "task_completed": false,
+        "function": {
+          "tool_name_discriminator": "computetelemetrydiagnosticstool",
+          "reasoning": "Для уточнения возможных аномалий необходимо провести диагностику телеметрии, особенно по каналам, связанным с RSSI и ориентацией КА.",
+          "channels": [
+            "Background_RSSI",
+            "ADCS_mode",
+            "Battery_Voltage",
+            "Battery_Temp"
+          ]
+        }
+      }
+    },
+    {
+      "step_number": 1,
+      "timestamp": "2026-03-09T00:29:51.774941",
+      "step_type": "tool_execution",
+      "tool_name": "computetelemetrydiagnosticstool",
+      "agent_tool_context": {
+        "reasoning": "Для уточнения возможных аномалий необходимо провести диагностику телеметрии, особенно по каналам, связанным с RSSI и ориентацией КА.",
+        "channels": [
+          "Background_RSSI",
+          "ADCS_mode",
+          "Battery_Voltage",
+          "Battery_Temp"
+        ]
+      },
+      "agent_tool_execution_result": "{\n  \"channels_analyzed\": [\n    \"Background_RSSI\",\n    \"ADCS_mode\",\n    \"Battery_Voltage\",\n    \"Battery_Temp\"\n  ],\n  \"samples_in_window\": 41,\n  \"diagnostics\": {\n    \"Background_RSSI\": {\n      \"mean\": -110.88888888888889,\n      \"std\": 7.92713732521643,\n      \"delta\": -7.0,\n      \"slope\": -0.6324786324786313\n    },\n    \"ADCS_mode\": {\n      \"mean\": 3.0,\n      \"std\": 0.0,\n      \"delta\": 0.0,\n      \"slope\": -9.310639696752772e-17\n    },\n    \"Battery_Voltage\": {\n      \"mean\": null,\n      \"std\": null,\n      \"delta\": null,\n      \"slope\": null\n    },\n    \"Battery_Temp\": {\n      \"mean\": null,\n      \"std\": null,\n      \"delta\": null,\n      \"slope\": null\n    }\n  },\n  \"subsystem_scores\": {\n    \"THERMAL\": 0.0,\n    \"POWER\": 0.0,\n    \"RF\": 0.35,\n    \"ADCS\": 0.0\n  }\n}"
+    },
+    {
+      "step_number": 2,
+      "timestamp": "2026-03-09T00:30:04.403708",
+      "step_type": "reasoning",
+      "agent_reasoning": {
+        "reasoning_steps": [
+          "Диагностика телеметрии показала значительное ухудшение RSSI с отрицательным наклоном -0.63 дБ/сэмпл",
+          "ADCS_mode стабилен, что исключает проблемы с ориентацией",
+          "Отсутствие данных по Battery_Voltage и Battery_Temp подтверждает ограничения наблюдения"
+        ],
+        "current_situation": "Аномалия выражена в ухудшении RSSI в условиях затмения без сопутствующих аномалий в других подсистемах",
+        "plan_status": "Гипотеза о радиочастотной интерференции в условиях затмения",
+        "enough_data": true,
+        "remaining_steps": [
+          "Формирование плана УВ для проверки радиочастотной стабильности"
+        ],
+        "task_completed": false,
+        "function": {
+          "tool_name_discriminator": "builduvplantool",
+          "reasoning": "Необходимо проверить стабильность работы радиооборудования в условиях затмения",
+          "preferred_actions": [
+            "Проверка параметров антенны",
+            "Тестирование фильтров СВЧ",
+            "Мониторинг RSSI в реальном времени",
+            "Проверка настройки усилителя"
+          ],
+          "conservative_mode": true
+        }
+      }
+    },
+    {
+      "step_number": 2,
+      "timestamp": "2026-03-09T00:30:04.404221",
+      "step_type": "tool_execution",
+      "tool_name": "builduvplantool",
+      "agent_tool_context": {
+        "reasoning": "Необходимо проверить стабильность работы радиооборудования в условиях затмения",
+        "preferred_actions": [
+          "Проверка параметров антенны",
+          "Тестирование фильтров СВЧ",
+          "Мониторинг RSSI в реальном времени",
+          "Проверка настройки усилителя"
+        ],
+        "conservative_mode": true
+      },
+      "agent_tool_execution_result": "{\n  \"alerts\": [],\n  \"errors\": [],\n  \"uv_plan\": [\n    \"Проверка параметров антенны\",\n    \"Тестирование фильтров СВЧ\",\n    \"Мониторинг RSSI в реальном времени\",\n    \"Проверка настройки усилителя\"\n  ],\n  \"prechecks\": [\n    \"Проверить доступный энергобаланс EPS\",\n    \"Проверить активный режим ADCS\",\n    \"Проверить термозапас ключевых подсистем\"\n  ],\n  \"postchecks\": [\n    \"Подтвердить стабилизацию температур\",\n    \"Проверить восстановление RSSI/телеметрии\",\n    \"Проверить отсутствие новых error codes\"\n  ]\n}"
+    }
+  ]
+}

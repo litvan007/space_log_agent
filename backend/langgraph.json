@@ -1,0 +1,8 @@
+{
+  "$schema": "https://langgra.ph/schema.json",
+  "dependencies": ["."],
+  "graphs": {
+    "space_incident": "./src/space_log_agent/graph.py:INCIDENT_GRAPH"
+  },
+  "env": "./.env"
+}
